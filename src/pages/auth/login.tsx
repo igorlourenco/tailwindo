@@ -1,7 +1,5 @@
 import React from "react";
 import Form, {
-  Checkbox,
-  CheckboxLabel,
   FormControl,
   FormHeader,
   FormWrapper,
@@ -10,7 +8,7 @@ import Form, {
   Label,
   SubmitButton,
 } from "../../components/form";
-import { CenteredBlue, CenteredVertically } from "../../components/layout";
+import { CenteredBlue } from "../../components/layout";
 
 export default function Login() {
   return (
