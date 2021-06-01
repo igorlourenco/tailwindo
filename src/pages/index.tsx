@@ -16,9 +16,9 @@ export default function Home() {
               <div>
                 <a
                   className="font-brand tracking-wider text-3xl font-bold text-gray-800 dark:text-white lg:text-4xl hover:text-gray-700 dark:hover:text-gray-300"
-                  href="#"
+                  href="/"
                 >
-                  feedba<span className="text-blue-700">.co</span>
+                  feedba<span className="text-blue-600">.co</span>
                 </a>
               </div>
             </div>
