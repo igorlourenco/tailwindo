@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { CTAButton } from "../components/common";
+import { CTAButton, Logo } from "../components/common";
 
 export default function Home() {
   return (
@@ -13,14 +13,7 @@ export default function Home() {
         <nav>
           <div className="container px-6 py-3 mx-auto md:flex md:justify-between md:items-center">
             <div className="flex items-center justify-between">
-              <div>
-                <a
-                  className="font-brand tracking-wider text-3xl font-bold text-gray-800 dark:text-white lg:text-4xl hover:text-gray-700 dark:hover:text-gray-300"
-                  href="/"
-                >
-                  feedba<span className="text-blue-600">.co</span>
-                </a>
-              </div>
+              <Logo />
             </div>
           </div>
         </nav>
