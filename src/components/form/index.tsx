@@ -1,5 +1,6 @@
 import { Label as LabelForm } from "./label";
 import { Input as InputForm } from "./input";
+import { Textarea as TextareaForm } from "./textarea";
 import { Header } from "./header";
 import { Button } from "./button";
 import { Wrapper } from "./wrapper";
@@ -10,6 +11,7 @@ import { Checkbox as CheckboxForm } from "./checkbox";
 import { CheckboxLabel as CheckboxLabelForm } from "./checkbox-label";
 
 export const Input = InputForm;
+export const Textarea = TextareaForm;
 export const Label = LabelForm;
 export const FormHeader = Header;
 export const SubmitButton = Button;
