@@ -59,7 +59,7 @@ const feedback = [
 export default function User() {
   return (
     <div className="flex">
-      <aside className="flex flex-col justify-center min-w-1/5 h-screen py-8 bg-white border-r dark:bg-gray-800 dark:border-gray-600">
+      <aside className="sticky top-0 flex flex-col justify-center min-w-1/5 h-screen py-8 bg-white border-r dark:bg-gray-800 dark:border-gray-600">
         <div className="w-full flex justify-center">
           <Logo />
         </div>
@@ -144,8 +144,8 @@ export default function User() {
           </nav>
         </div>
       </aside>
-      <main className="flex items-center flex-col py-8 px-16 w-4/5">
-        <div className="flex w-5/6 h-28 gap-x-1">
+      <main className="flex items-center flex-col px-16 w-4/5">
+        <div className="flex w-5/6 h-28 gap-x-1 mt-8">
           <Textarea placeholder="O que você está pensando sobre Igor?" />
           <div className="flex flex-col justify-between w-1/3 pl-3 gap-y-2">
             <div className="flex justify-between items-center">
