@@ -1,5 +1,5 @@
 import React from "react";
-import { FaMapMarkedAlt, FaMapMarker, FaUsers } from "react-icons/fa";
+import { FaMapMarkerAlt, FaUsers } from "react-icons/fa";
 
 export default function Team() {
   return (
@@ -17,7 +17,7 @@ export default function Team() {
                 Foton Tech
               </h4>
               <div className="flex gap-x-2 mt-1 items-center">
-                <FaMapMarkedAlt />
+                <FaMapMarkerAlt />
                 <h5 className="text-sm font-medium text-gray-600">
                   Santa Catarina, Brasil
                 </h5>
