@@ -11,15 +11,16 @@ export default function Home() {
 
       <main>
         <section className="p-4 flex items-center justify-center">
-          <div className="flex px-24 py-2 items-center justify-around rounded gap-x-16 border border-brand-papaya border-opacity-70">
-            <div className="flex items-center gap-x-4">
-              <FaRegHeart size={22} className="text-brand-blue-dark" />
-              <p className="text-brand-blue-dark font-brand text-lg leading-none">
+          <div className="flex px-24 py-2 items-center justify-around rounded gap-x-16 shadow-sm bg-gradient-to-tl from-white to-brand-papaya">
+            <div className="flex items-end gap-x-4">
+              <FaRegHeart size={20} className="text-brand-blue-dark" />
+
+              <a className="text-brand-blue-dark font-brand text-lg leading-none">
                 Estamos na versão BETA. Comece a usar agora e ganhe desconto.
-              </p>
+              </a>
             </div>
-            <a className="bg-gradient-to-t from-brand-blue-dark to-brand-blue-light px-3 py-2 rounded-full font-semibold text-white cursor-pointer shadow-md">
-              Registre-se — 90% off
+            <a className="bg-gradient-to-t from-brand-blue-dark to-brand-blue-light px-3 py-2 rounded-full font-semibold text-white text-sm cursor-pointer shadow-md">
+              REGISTRE-SE — 90% OFF
             </a>
           </div>
         </section>
@@ -39,7 +40,7 @@ export default function Home() {
                   na sua empresa.
                 </h2>
                 <a className="mt-4 bg-yellow-500 py-3 px-12 rounded-full font-semibold text-white text-lg cursor-pointer shadow-md hover:bg-brand-yellow">
-                  Vamos lá!
+                  QUERO COMEÇAR AGORA!
                 </a>
               </div>
             </div>
@@ -52,7 +53,7 @@ export default function Home() {
 
         <section
           id="employee-success"
-          className="-mt-72 z-20 px-10 -pb-44 pt-10"
+          className="-mt-72 z-20 px-16 -pb-44 pt-10"
         >
           <h1 className="text-brand-blue-dark text-4xl font-bold font-brand">
             A importância da experiência do colaborador
@@ -95,30 +96,32 @@ export default function Home() {
         </section>
         <section className="-mt-96 z-10">
           <img src="images/landing/base-section-2.svg" className="z-10"></img>
-          <div className="bg-gradient-to-b from-brand-blue-dark via-brand-blue-dark  to-brand-blue-dark px-10">
+          <div className="bg-gradient-to-b from-brand-blue-dark via-brand-blue-dark  to-brand-blue-dark px-16">
             <h1 className="text-white text-4xl font-bold font-brand -mt-8">
               Por que a (nome)?
             </h1>
-            <div className="flex mt-8 pb-16 gap-x-8 items-center">
+            <div className="flex mt-20 pb-16 gap-x-8 items-stretch">
               <div className="h-64 w-1/3 overflow-hidden">
                 <img src="images/landing/tool.svg" className="object-cover" />
               </div>
               <div className="w-1/3">
                 <p className="text-lg text-white font-semibold">
-                  A (nome) ajuda sua empresa a garantir que o que seus
-                  colaboradores sentem ao trabalhar na sua empresa se alinha com
-                  os valores que você prometeu entregar a eles por meio de uma
-                  ferramenta simples e fácil de usar, sempre visando o sucesso
-                  da sua marca e de seus colaboradores.
+                  Por meio de uma ferramenta simples e fácil de usar, a (nome)
+                  ajuda sua empresa a garantir que o sentimento que seus
+                  colaboradores têm ao trabalhar na sua empresa se alinha com os
+                  valores que você prometeu entregar a eles, sempre visando o
+                  sucesso da sua marca e a felicidade de seus colaboradores.
                 </p>
               </div>
               <div className="w-1/3">
                 <p className="text-lg text-white font-semibold">
-                  A (nome) ajuda sua empresa a garantir que o que seus
-                  colaboradores sentem ao trabalhar na sua empresa se alinha com
-                  os valores que você prometeu entregar a eles por meio de uma
-                  ferramenta simples e fácil de usar, sempre visando o sucesso
-                  da sua marca e de seus colaboradores.
+                  Fornecemos a melhor opção para a garantia de uma ótima
+                  experiência para seus colaboradores, desde um feedback geral
+                  sobre a empresa, com um mecanismo que permite aos
+                  colaboradores darem opiniões sinceras e construtivas sobre sua
+                  marca, até o gerenciamento de reuniões 1:1, que merecem uma
+                  atenção e cuidado individual, faremos de tudo para ajudar você
+                  e seu time.
                 </p>
               </div>
             </div>
