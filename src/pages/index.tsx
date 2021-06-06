@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { FaRegHeart } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -9,21 +10,35 @@ export default function Home() {
       </Head>
 
       <main>
+        <section className="p-4 flex items-center justify-center">
+          <div className="flex px-24 py-2 items-center justify-around rounded gap-x-16 border border-brand-papaya border-opacity-70">
+            <div className="flex items-center gap-x-4">
+              <FaRegHeart size={22} className="text-brand-blue-dark" />
+              <p className="text-brand-blue-dark font-brand text-lg leading-none">
+                Estamos na versão BETA. Comece a usar agora e ganhe desconto.
+              </p>
+            </div>
+            <a className="bg-gradient-to-t from-brand-blue-dark to-brand-blue-light px-3 py-2 rounded-full font-semibold text-white cursor-pointer shadow-md">
+              Registre-se — 90% off
+            </a>
+          </div>
+        </section>
         <section
           id="home"
           className="bg-gradient-to-b from-white to-brand-papaya"
         >
           <div className="flex flex-row h-90">
             <div className="w-1/2 z-20 flex items-center">
-              <div className="-mr-20 bg-brand-blue-dark px-8 py-12 shadow-xl flex items-start flex-col gap-y-2">
-                <h1 className="text-white text-4xl font-bold font-brand">
+              <div className="-mr-24 px-16 flex items-start flex-col gap-y-2">
+                <h1 className="text-brand-blue-dark text-6xl font-bold font-brand">
                   O sucesso do seu time é o seu sucesso
                 </h1>
-                <h2 className="text-white text-md text-justify">
-                  Uma solução completa para cuidar do seu time e promover um
-                  bem-estar real na sua empresa.
+                <h2 className="font-medium text-brand-blue-dark text-lg text-justify">
+                  Uma solução completa para cuidar do seu time, estreitar
+                  relações com seus colaboradores e promover um bem-estar real
+                  na sua empresa.
                 </h2>
-                <a className="mt-4 bg-yellow-500 py-3 px-12 rounded-full font-semibold text-white text-lg cursor-pointer shadow-md hover:bg-brand-yellow transform hover:scale-105 ease-in-out transition duration-500">
+                <a className="mt-4 bg-yellow-500 py-3 px-12 rounded-full font-semibold text-white text-lg cursor-pointer shadow-md hover:bg-brand-yellow">
                   Vamos lá!
                 </a>
               </div>
@@ -31,14 +46,6 @@ export default function Home() {
             <div className="w-1/2 z-10 pl-20 pr-4">
               <img src="/images/landing/team.svg" className="object-cover" />
             </div>
-          </div>
-          <div className="flex justify-center p-5">
-            <a
-              href="#employee-success"
-              className="animate-bounce font-semibold text-sm text-brand-blue-dark"
-            >
-              Conhecer melhor
-            </a>
           </div>
         </section>
         <img src="images/landing/base-section-1.svg"></img>
