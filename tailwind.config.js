@@ -17,6 +17,13 @@ module.exports = {
 		'1/2': '50%',
 		'3/4': '75%',
 		'full': '100%',
+	},
+	colors: {
+		'brand-blue-dark': '#086788',
+		'brand-blue-light': '#07A0C3',
+		'brand-yellow': '#f0C808',
+		'brand-papaya': '#FFF1D0',
+		'brand-red': '#DD1C1A'
 	}
   },
   variants: {

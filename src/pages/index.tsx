@@ -8,15 +8,21 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="bg-white dark:bg-gray-800">
-        <nav>
-          <div className="container px-6 py-3 mx-auto md:flex md:justify-between md:items-center">
-            <div className="flex items-center justify-between">
-              <p>IGOR</p>
-            </div>
+      <main>
+        <section>
+          <div>
+            <h1 className="text-brand-red">
+              O sucesso do seu time é o seu sucesso
+            </h1>
+            <h2>
+              Uma solução completa para cuidar do seu time e promover um
+              bem-estar real na sua empresa.
+            </h2>
+            <a>Vamos lá!</a>
           </div>
-        </nav>
-      </header>
+          <div></div>
+        </section>
+      </main>
     </div>
   );
 }
