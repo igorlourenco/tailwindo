@@ -92,7 +92,7 @@ export default function Home() {
             <h1 className="text-white text-4xl font-bold font-brand -mt-8">
               Por que a (nome)?
             </h1>
-            <div className="flex mt-12 pb-16 gap-x-8 items-center">
+            <div className="flex mt-8 pb-16 gap-x-8 items-center">
               <div className="h-64 w-1/3 overflow-hidden">
                 <img src="images/landing/tool.svg" className="object-cover" />
               </div>
