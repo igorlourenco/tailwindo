@@ -11,7 +11,7 @@ export default function Home() {
 
       <main>
         <section className="p-4 flex items-center justify-center">
-          <div className="flex px-24 py-2 items-center justify-around rounded gap-x-16 shadow-sm bg-gradient-to-tl from-white to-brand-papaya">
+          <div className="flex px-24 py-2 items-center justify-around rounded gap-x-16 shadow-md bg-gradient-to-tl from-white to-brand-papaya">
             <div className="flex items-end gap-x-4">
               <FaRegHeart size={20} className="text-brand-blue-dark" />
 
@@ -19,7 +19,7 @@ export default function Home() {
                 Estamos na versão BETA. Comece a usar agora e ganhe desconto.
               </a>
             </div>
-            <a className="bg-gradient-to-t from-brand-blue-dark to-brand-blue-light px-3 py-2 rounded-full font-semibold text-white text-sm cursor-pointer shadow-md">
+            <a className="bg-gradient-to-t from-brand-blue-dark to-brand-blue-light px-3 py-2 rounded-lg font-semibold text-white text-sm cursor-pointer shadow-md">
               REGISTRE-SE — 90% OFF
             </a>
           </div>
