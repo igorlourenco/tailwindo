@@ -15,7 +15,7 @@ export default function Home() {
         >
           <div className="flex flex-row h-90">
             <div className="w-1/2 z-20 flex items-center">
-              <div className="-mr-20 bg-gradient-to-tl from-brand-blue-light to-brand-blue-dark p-8 shadow-xl flex items-start flex-col gap-y-2">
+              <div className="-mr-20 bg-brand-blue-dark px-8 py-12 shadow-xl flex items-start flex-col gap-y-2">
                 <h1 className="text-white text-4xl font-bold font-brand">
                   O sucesso do seu time é o seu sucesso
                 </h1>
@@ -43,12 +43,15 @@ export default function Home() {
         </section>
         <img src="images/landing/base-section-1.svg"></img>
 
-        <section id="employee-success" className="-mt-40 z-20 px-10 pb-10">
+        <section
+          id="employee-success"
+          className="-mt-72 z-20 px-10 -pb-44 pt-10"
+        >
           <h1 className="text-brand-blue-dark text-4xl font-bold font-brand">
             A importância da experiência do colaborador
           </h1>
           <div className="flex flex-row items-stretch gap-x-8 mt-8">
-            <div className="w-1/3 h-100 p-5 rounded shadow-xl bg-gradient-to-tl from-brand-papaya to-white">
+            <div className="w-1/2 h-100 p-5 rounded shadow-xl bg-gradient-to-tl from-brand-papaya to-white">
               <h1 className="text-2xl font-bold font-brand text-brand-blue-dark">
                 Melhora das relações interpessoais
               </h1>
@@ -58,7 +61,7 @@ export default function Home() {
                 desenvolver uma melhor relação com os colegas.
               </p>
             </div>
-            <div className="w-1/3 h-100 p-5 rounded shadow-xl bg-gradient-to-tl from-brand-papaya to-white">
+            <div className="w-1/2 h-100 p-5 rounded shadow-xl bg-gradient-to-tl from-brand-papaya to-white">
               <h1 className="text-2xl font-bold font-brand text-brand-blue-dark">
                 Desenvolvimento da marca
               </h1>
@@ -68,7 +71,9 @@ export default function Home() {
                 retém os que já estão engajados com a marca.
               </p>
             </div>
-            <div className="w-1/3 h-100 p-5 rounded shadow-xl bg-gradient-to-tl from-brand-papaya to-white">
+          </div>
+          <div className="flex flex-row items-start justify-between gap-x-8 mt-8">
+            <div className="w-1/2 p-5 rounded shadow-xl bg-gradient-to-tl from-brand-papaya to-white">
               <h1 className="text-2xl font-bold font-brand text-brand-blue-dark">
                 Redução de evasão e de custos
               </h1>
@@ -78,12 +83,40 @@ export default function Home() {
                 contratação e treinamentos de novos funcionários.
               </p>
             </div>
+            <img src="images/landing/success.svg" className="w-5/12 z-20" />
           </div>
         </section>
-        <img
-          src="images/landing/base-section-2.svg"
-          className="z-10 -mt-32"
-        ></img>
+        <section className="-mt-96 z-10">
+          <img src="images/landing/base-section-2.svg" className="z-10"></img>
+          <div className="bg-gradient-to-b from-brand-blue-dark via-brand-blue-dark  to-brand-blue-dark px-10">
+            <h1 className="text-white text-4xl font-bold font-brand -mt-8">
+              Por que a (nome)?
+            </h1>
+            <div className="flex mt-8 pb-16 gap-x-8 items-center">
+              <div className="h-64 w-1/3 overflow-hidden">
+                <img src="images/landing/tool.svg" className="object-cover" />
+              </div>
+              <div className="w-1/3">
+                <p className="text-lg text-white font-semibold">
+                  A (nome) ajuda sua empresa a garantir que o que seus
+                  colaboradores sentem ao trabalhar na sua empresa se alinha com
+                  os valores que você prometeu entregar a eles por meio de uma
+                  ferramenta simples e fácil de usar, sempre visando o sucesso
+                  da sua marca e de seus colaboradores.
+                </p>
+              </div>
+              <div className="w-1/3">
+                <p className="text-lg text-white font-semibold">
+                  A (nome) ajuda sua empresa a garantir que o que seus
+                  colaboradores sentem ao trabalhar na sua empresa se alinha com
+                  os valores que você prometeu entregar a eles por meio de uma
+                  ferramenta simples e fácil de usar, sempre visando o sucesso
+                  da sua marca e de seus colaboradores.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
