@@ -56,9 +56,9 @@ export default function Home() {
                 Melhora das relações interpessoais
               </h1>
               <p className="mt-2 text-brand-blue-dark">
-                Se sentindo confortáveis com a empresa, os colaboradores tendem
-                a fortalecer os valores da empresa, aplicar boas práticas e
-                desenvolver uma melhor relação com os colegas.
+                Se sentindo confortáveis com o ambiente de trabalho, os
+                colaboradores tendem a fortalecer os valores da empresa, aplicar
+                boas práticas e desenvolver uma melhor relação com os colegas.
               </p>
             </div>
             <div className="w-1/2 h-100 p-5 rounded shadow-xl bg-gradient-to-tl from-brand-papaya to-white">
@@ -66,9 +66,9 @@ export default function Home() {
                 Desenvolvimento da marca
               </h1>
               <p className="mt-2 text-brand-blue-dark">
-                Se tornando um melhor lugar para trabalhar, a empresa se torna
-                mais competitiva, pois atrai os melhores talentos do mercado e
-                retém os que já estão engajados com a marca.
+                Sendo um melhor lugar para trabalhar, a empresa se torna mais
+                competitiva, pois atrai os melhores talentos do mercado e retém
+                os que já estão engajados com a marca.
               </p>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function Home() {
               </h1>
               <p className="mt-2 text-brand-blue-dark">
                 Com uma cultura de cuidado bem implementada, a saída de
-                colaboradores é reduzida, promovendo economia com custos de
+                colaboradores é reduzida, resultando em economia com custos de
                 contratação e treinamentos de novos funcionários.
               </p>
             </div>
@@ -92,7 +92,7 @@ export default function Home() {
             <h1 className="text-white text-4xl font-bold font-brand -mt-8">
               Por que a (nome)?
             </h1>
-            <div className="flex mt-8 pb-16 gap-x-8 items-center">
+            <div className="flex mt-12 pb-16 gap-x-8 items-center">
               <div className="h-64 w-1/3 overflow-hidden">
                 <img src="images/landing/tool.svg" className="object-cover" />
               </div>
