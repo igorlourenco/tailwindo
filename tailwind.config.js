@@ -8,7 +8,7 @@ module.exports = {
     extend: {
 		fontFamily: {
 		  sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
-		  brand: '"Racing Sans One", cursive',
+		  brand: '"Vollkorn", serif',
 		},
 		minWidth: {
 			'0': '0',
