@@ -4,7 +4,7 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
 	options: {
 		value: string | number;
 		label: string;
-	}
+	}[]
 }
 
 export default function Select({options, ...props}: SelectProps) {
