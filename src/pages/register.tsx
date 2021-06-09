@@ -1,6 +1,17 @@
 import React from "react";
 import AuthButton from "../components/auth-button";
+import FormControl from "../components/form/form-control";
+import Label from "../components/form/label";
+import Input from "../components/form/input";
+import Select from "../components/form/select";
 import { useAuth } from "../contexts/auth";
+
+const companySizeOptions = [
+	{value: 1, label: 'Entre 1 e 25 pessoas'},
+	{value: 2, label: 'Entre 25 e 50 pessoas'},
+	{value: 3, label: 'Entre 50 e 100 pessoas'},
+	{value: 4, label: 'Mais de 100 pessoas'},
+]
 
 export default function Register() {
   const { user, signOut } = useAuth();
@@ -15,20 +26,27 @@ export default function Register() {
           <>
             <div className="flex flex-col items-center justify-center">
               <h3 className="text-xl text-gray-600 font-brand font-semibold">
-                Crie sua conta com apenas um toque.
+                Estamos ansiosos para ter você aqui
               </h3>
-              <p className="text-gray-600 text-lg">Simples, fácil e rápido.</p>
+              <p className="text-gray-600 text-md">Crie sua conta.</p>
             </div>
 
-            <div className="flex flex-col w-full">
-              <label htmlFor="company-name" className="text-gray-600 ">
-                Onde você trabalha?
-              </label>
-              <input
+            <FormControl>
+              <Label htmlFor="company-name">Onde você trabalha?</Label>
+              <Input
                 id="company-name"
-                className="border border-gray-300 rounded-md w-full px-3 py-2 font-medium text-gray-600 outline-none focus:ring-1 active:ring-1 ring-blue-400"
+                placeholder="Hogwarts"
               />
-            </div>
+            </FormControl>
+            <FormControl>
+              <Label htmlFor="company-size">
+                Quantas pessoas trabalham nessa companhia?
+              </Label>
+              <Select
+                id="company-size"
+				options={companySizeOptions}
+             />
+            </FormControl>
 
             <AuthButton icon="touch">Finalizar cadastro</AuthButton>
           </>
