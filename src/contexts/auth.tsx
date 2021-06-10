@@ -66,6 +66,7 @@ function useProvideAuth() {
       .signOut()
       .then(async () => {
         await handleUser(null);
+        router.push("/");
       });
   };
 
