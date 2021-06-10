@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { toast } from "tailwind-toast";
 import { findCompanyByUser } from "../database/client";
 import { Company } from "../interfaces/company";
+import getRandomWave from "../utils/getRandomWave";
 
 const teamsOptions = [
   { value: 1, label: "Na empresa inteira" },
@@ -82,9 +83,9 @@ export default function Register() {
 
   return (
     <div
-      className="flex flex-col p-5 w-full items-center min-h-screen justify-center bg-no-repeat	"
+      className="flex flex-col p-5 w-full items-center min-h-screen justify-center bg-no-repeat"
       style={{
-        backgroundImage: `url("/images/register/wave.svg")`,
+        backgroundImage: `url("${getRandomWave()}")`,
       }}
     >
       <h1 className="text-3xl text-center text-gray-600 font-brand font-bold">
