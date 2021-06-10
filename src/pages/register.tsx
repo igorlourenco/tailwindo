@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import ButtonWithIcon from "../components/button-icon";
 import FormControl from "../components/form/form-control";
 import Label from "../components/form/label";
@@ -6,6 +7,7 @@ import Input from "../components/form/input";
 import Select from "../components/form/select";
 import { useAuth } from "../contexts/auth";
 import Textarea from "../components/form/textarea";
+import { createCompany } from "../database/client";
 
 const teamsOptions = [
   { value: 1, label: "Na empresa inteira" },
@@ -26,55 +28,96 @@ const companySizeOptions = [
 ];
 
 export default function Register() {
-  const { user, signOut } = useAuth();
+  const { user, signOut, signInWithGoogle } = useAuth();
+  const { register, handleSubmit } = useForm();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onSubmit = async (data) => {
+    data.motivation ?? " ";
+    setIsLoading(true);
+    createCompany({ ownerId: user.id, ...data });
+    setIsLoading(false);
+  };
 
   return (
-    <div className="flex flex-col p-5 w-full items-center min-h-screen justify-center">
+    <div
+      className="flex flex-col p-5 w-full items-center min-h-screen justify-center bg-no-repeat	"
+      style={{
+        backgroundImage: `url("/images/register/wave.svg")`,
+      }}
+    >
       <h1 className="text-3xl text-center text-gray-600 font-brand font-bold">
-        Comece a dar todo o cuidado que seu time merece 💙
+        Todo o cuidado que seu time merece 💙
       </h1>
-      <form className="flex flex-col items-center justify-center border gap-y-5 p-7 mt-8 w-full lg:w-1/3 shadow-md rounded-xl">
-        {!user && (
-          <>
-            <div className="flex flex-col items-center justify-center">
-              <h3 className="text-2xl text-center text-gray-600 font-brand font-semibold">
-                Crie sua conta{" "}
-              </h3>
-              <p className="text-gray-600 text-center text-md">
-                Estamos ansiosos para ter você conosco
-              </p>
-            </div>
-
+      <div className="flex flex-col items-center justify-center border gap-y-5 p-7 mt-8 w-full lg:w-1/3 shadow-md rounded-xl">
+        <div className="flex flex-col items-center justify-center">
+          <h3 className="text-2xl text-center text-gray-600 font-brand font-semibold">
+            Crie sua conta
+          </h3>
+          <p className="text-gray-600 text-center text-md">
+            {user
+              ? "Estamos ansiosos para ter você conosco"
+              : "Comece fazendo registrando seu login"}
+          </p>
+        </div>
+        {user ? (
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col items-center justify-center gap-y-5 w-full"
+          >
             <FormControl>
-              <Label htmlFor="company-name">
-                Em qual empresa você trabalha?
-              </Label>
-              <Input id="company-name" />
+              <Label htmlFor="name">Em qual empresa você trabalha?</Label>
+              <Input id="name" {...register("name")} />
             </FormControl>
             <FormControl>
               <Label htmlFor="whom-teams">
                 Com quem você deseja usar o Your Team?
               </Label>
-              <Select id="whom-teams" options={teamsOptions} />
+              <Select
+                id="whom-teams"
+                options={teamsOptions}
+                {...register("whomTeams")}
+              />
             </FormControl>
             <FormControl>
-              <Label htmlFor="company-size">E com quantas pessoas?</Label>
-              <Select id="company-size" options={companySizeOptions} />
+              <Label htmlFor="team-size">E com quantas pessoas?</Label>
+              <Select
+                id="team-size"
+                options={companySizeOptions}
+                {...register("teamSize")}
+              />
             </FormControl>
 
             <FormControl>
               <Label htmlFor="problem">
                 Qual problema fez você querer usar Your Team?
               </Label>
-              <Textarea id="problem" placeholder="(opcional)" />
+              <Textarea
+                id="motivation"
+                placeholder="(opcional)"
+                {...register("motivation")}
+              />
             </FormControl>
 
-            <ButtonWithIcon icon="touch" type="submit">
-              Finalizar cadastro
+            <ButtonWithIcon
+              type="submit"
+              icon={isLoading ? null : "touch"}
+              disabled={isLoading}
+            >
+              {isLoading ? "Enviando..." : " Finalizar cadastro"}
             </ButtonWithIcon>
-          </>
+          </form>
+        ) : (
+          <ButtonWithIcon
+            bgColorIntensity={100}
+            textColor="blue-700"
+            icon="google"
+            onClick={signInWithGoogle}
+          >
+            Entrar com Google
+          </ButtonWithIcon>
         )}
-      </form>
+      </div>
     </div>
   );
 }

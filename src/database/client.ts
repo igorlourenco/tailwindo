@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import { Company } from '../interfaces/company'
 import { User } from '../interfaces/user'
 
 const firestore = firebase.firestore()
@@ -11,6 +12,10 @@ export async function createUser(uid: string, user: User) {
     .set({ uid, ...user }, { merge: true })
 }
 
+export async function createCompany(company: Company) {
+	return await firestore
+	  .collection('companies').add(company)
+  }
 
 export async function findUserById(email: string) {
   try {

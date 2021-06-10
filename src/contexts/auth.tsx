@@ -51,6 +51,12 @@ function useProvideAuth() {
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then(async (response) => {
         await handleUser(response.user);
+
+        return true;
+      })
+      .catch((error) => {
+        console.log(error);
+        return false;
       });
   };
 
@@ -60,7 +66,6 @@ function useProvideAuth() {
       .signOut()
       .then(async () => {
         await handleUser(null);
-        await router.push("/");
       });
   };
 
