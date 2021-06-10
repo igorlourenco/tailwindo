@@ -3348,6 +3348,11 @@ supports-color@^8.0.0:
   dependencies:
     has-flag "^4.0.0"
 
+tailwind-toast@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/tailwind-toast/-/tailwind-toast-1.0.9.tgz#3657d5d74228589a6d2ca85172f4b2b0a5a1e067"
+  integrity sha512-FwaRcRYR8ugpoojeS/zYGW3kG1mDoxNHA7oJsk9Pzg8+sXImna8DY5MtHUcAyaMNbqx2A4JwsGOVwhtXxpkWIA==
+
 tailwindcss@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.1.2.tgz#29402bf73a445faedd03df6d3b177e7b52b7c4a1"

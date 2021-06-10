@@ -8,6 +8,8 @@ import Select from "../components/form/select";
 import { useAuth } from "../contexts/auth";
 import Textarea from "../components/form/textarea";
 import { createCompany } from "../database/client";
+import { useRouter } from "next/router";
+import { toast, snackbar } from "tailwind-toast";
 
 const teamsOptions = [
   { value: 1, label: "Na empresa inteira" },
@@ -28,6 +30,7 @@ const companySizeOptions = [
 ];
 
 export default function Register() {
+  const router = useRouter();
   const { user, signOut, signInWithGoogle } = useAuth();
   const { register, handleSubmit } = useForm();
   const [isLoading, setIsLoading] = useState(false);
@@ -35,8 +38,23 @@ export default function Register() {
   const onSubmit = async (data) => {
     data.motivation ?? " ";
     setIsLoading(true);
-    createCompany({ ownerId: user.id, ...data });
+    await createCompany({ ownerId: user.id, ...data });
+    toast()
+      .success("Sucesso!", "Sua conta foi criada.")
+      .with({
+        duration: 4000,
+        speed: 1000,
+        positionX: "center",
+        positionY: "bottom",
+        color: "blue",
+        tone: 600,
+        fontColor: "blue",
+        fontTone: 50,
+      })
+      .show(); //show pill shaped toast
+
     setIsLoading(false);
+    router.push("/");
   };
 
   return (
