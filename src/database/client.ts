@@ -17,17 +17,17 @@ export async function createCompany(company: Company) {
 	  .collection('companies').add(company)
   }
 
-export async function findUserById(email: string) {
+export async function findCompanyByUser(id: string) {
   try {
-    const snapshot = await firestore.collection('users').where('email', '==', email).get()
+    const snapshot = await firestore.collection('companies').where('ownerId', '==', id).get()
 
-    const users = []
+    const companies: Company[] = []
 
     snapshot.forEach((doc) => {
-      users.push({ id: doc.id, ...doc.data() })
+		companies.push({ id: doc.id, ...doc.data() })
     })
 
-    return { user: users[0] }
+    return { company: companies[0] }
   } catch (error) {
     return { error }
   }

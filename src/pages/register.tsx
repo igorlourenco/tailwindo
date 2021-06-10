@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import ButtonWithIcon from "../components/button-icon";
 import FormControl from "../components/form/form-control";
@@ -9,7 +9,9 @@ import { useAuth } from "../contexts/auth";
 import Textarea from "../components/form/textarea";
 import { createCompany } from "../database/client";
 import { useRouter } from "next/router";
-import { toast, snackbar } from "tailwind-toast";
+import { toast } from "tailwind-toast";
+import { findCompanyByUser } from "../database/client";
+import { Company } from "../interfaces/company";
 
 const teamsOptions = [
   { value: 1, label: "Na empresa inteira" },
@@ -31,9 +33,30 @@ const companySizeOptions = [
 
 export default function Register() {
   const router = useRouter();
-  const { user, signOut, signInWithGoogle } = useAuth();
+  const { user, signInWithGoogle } = useAuth();
   const { register, handleSubmit } = useForm();
   const [isLoading, setIsLoading] = useState(false);
+  const [company, setCompany] = useState<Company>(null);
+
+  useEffect(() => {
+    async function getCompany() {
+      const { company, error } = await findCompanyByUser(user.id);
+      if (company) {
+        setCompany(company);
+        return;
+      }
+      if (error) {
+        console.log(error);
+        return;
+      }
+    }
+
+    getCompany();
+  }, [user]);
+
+  useEffect(() => {
+    if (company) router.push("/dashboard");
+  }, [company]);
 
   const onSubmit = async (data) => {
     data.motivation ?? " ";
@@ -42,19 +65,19 @@ export default function Register() {
     toast()
       .success("Sucesso!", "Sua conta foi criada.")
       .with({
-        duration: 4000,
+        duration: 3000,
         speed: 1000,
         positionX: "center",
         positionY: "bottom",
         color: "blue",
-        tone: 600,
+        tone: 500,
         fontColor: "blue",
         fontTone: 50,
       })
       .show(); //show pill shaped toast
 
     setIsLoading(false);
-    router.push("/");
+    router.push("/dashboard");
   };
 
   return (
@@ -67,7 +90,7 @@ export default function Register() {
       <h1 className="text-3xl text-center text-gray-600 font-brand font-bold">
         Todo o cuidado que seu time merece 💙
       </h1>
-      <div className="flex flex-col items-center justify-center border gap-y-5 p-7 mt-8 w-full lg:w-1/3 shadow-md rounded-xl">
+      <div className="flex flex-col items-center justify-center border gap-y-5 p-5 mt-8 w-full lg:w-1/3 shadow-md rounded-xl">
         <div className="flex flex-col items-center justify-center">
           <h3 className="text-2xl text-center text-gray-600 font-brand font-semibold">
             Crie sua conta
