@@ -21,7 +21,7 @@ export async function findCompanyByUser(id: string) {
   try {
     const snapshot = await firestore.collection('companies').where('ownerId', '==', id).get()
 
-    const companies= []
+    const companies = []
 
     snapshot.forEach((doc) => {
 		companies.push({ id: doc.id, ...doc.data() })
